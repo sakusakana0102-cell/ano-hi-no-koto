@@ -132,15 +132,16 @@ body {
 /* ===== 検索 ===== */
 
 .search-area {
-position: static;
+    position: absolute;
     top: 30px;
     right: 40px;
     width: 300px;
     margin: 0;
-    padding: 28px 40px;
+    padding: 15px 20px;
     background: #d6edf7;
     border-top: none;
 }
+
 
 .search-label {
     margin-bottom: 12px;
@@ -879,31 +880,40 @@ function getArticleNumber(index) {
 /* ========================= 
    最初の画面 
 ========================= */ 
- 
-function showHome() { 
-    document.getElementById("app").innerHTML = ` 
-        <header class="blog-header"> 
-            <h1 class="blog-title">あの日のこと</h1> 
-            <p class="blog-description"> 
-                忘れたくないこと、<br> 
-                思い出したいこと、<br> 
-                そして、日々のこと。 
-            </p> 
-      
-<div class="search-area"> 
-    <div class="search-label">SEARCH</div> 
-    <div class="search-form"> 
-        <input type="text" id="searchBox" placeholder="キーワードを入力"> 
-        <button onclick="search()">検索</button> 
-    </div> 
-</div>
-</header>
-`;
-         
-    document.getElementById("searchBox").addEventListener("keydown", function(event) { 
-        if (event.key === "Enter") search(); 
-    }); 
-} 
+function showHome() {
+    document.getElementById("app").innerHTML = `
+        <header class="blog-header">
+            <h1 class="blog-title">あの日のこと</h1>
+            <p class="blog-description">
+                忘れたくないこと、<br>
+                思い出したいこと、<br>
+                そして、日々のこと。
+            </p>
+
+            <div class="search-area">
+                <div class="search-label">SEARCH</div>
+                <div class="search-form">
+                    <input type="text" id="searchBox" placeholder="キーワードを入力">
+                    <button onclick="search()">検索</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="blog-main">
+            <div class="home-article">
+                <button class="result-button" onclick="showArticle(0)">
+                    <div class="article-date">2026.09.16</div>
+                    <div class="article-title">日記：起床</div>
+                </button>
+            </div>
+        </main>
+    `;
+
+    document.getElementById("searchBox").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") search();
+    });
+}
+
  
 function search() { 
  
