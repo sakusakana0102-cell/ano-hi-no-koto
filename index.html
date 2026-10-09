@@ -132,7 +132,7 @@ body {
 /* ===== 検索 ===== */
 
 .search-area {
-    position: absolute;
+position: static;
     top: 30px;
     right: 40px;
     width: 300px;
@@ -267,123 +267,66 @@ button:hover {
 }
 
 /* ===== スマートフォン ===== */
-
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
     body {
         padding: 0 16px 45px;
     }
 
     .blog-header {
-        padding: 30px 0 25px;
-    }
-
-    .blog-title {
-        font-size: 27px;
-    }
-
-    .search-area {
-        position: static;
-        width: 100%;
-        margin-top: 25px;
-        padding: 20px 0;
-    }
-
-    .search-form {
-        display: flex;
-        width: 100%;
-    }
-
-    .article {
-        padding: 35px 0;
-    }
-
-    .article-title {
-        font-size: 24px;
-    }
-
-    .article-body {
-        font-size: 15px;
-    }
-
-    button {
-        padding-left: 14px;
-        padding-right: 14px;
-    }
-}
-    .blog-header {
-        padding: 35px 0 28px;
-    }
-
-    .blog-title {
-        font-size: 27px;
-    }
-
-    .article {
-        padding: 35px 0;
-    }
-
-    .article-title {
-        font-size: 24px;
-    }
-
-    .article-body {
-        font-size: 15px;
-    }
-
-    .search-form {
-        display: flex;
-    }
-
-    button {
-        padding-left: 14px;
-        padding-right: 14px;
-    }
-}
-
-@media (max-width: 600px) {
-    .blog-header {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-    }
-
-    .search-area {
-        position: static !important;
-        width: 100% !important;
-        margin-top: 25px !important;
-        padding: 20px 0 !important;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .blog-header {
-        display: block !important;
-        position: relative !important;
-        height: auto !important;
-        min-height: 0 !important;
-        padding: 25px 16px 20px !important;
+        position: relative;
+        height: auto;
+        min-height: 0;
+        padding: 25px 16px 20px;
     }
 
     .blog-title {
-        display: block !important;
-        position: static !important;
-        margin: 0 !important;
+        display: block;
+        position: static;
+        margin: 0;
+        font-size: 27px;
     }
 
     .blog-description {
-        display: block !important;
-        position: static !important;
-        margin: 8px 0 0 !important;
+        display: block;
+        position: static;
+        margin: 8px 0 0;
+        font-size: 13px;
     }
 
     .search-area {
-        display: block !important;
-        position: static !important;
-        width: 100% !important;
-        margin: 25px 0 0 !important;
-        padding: 15px 0 !important;
+        display: block;
+        position: static;
+        width: 100%;
+        margin: 25px 0 0;
+        padding: 15px 0;
+    }
+
+    .search-form {
+        display: flex;
+        width: 100%;
+    }
+
+    .article {
+        padding: 35px 0;
+    }
+
+    .article-title {
+        font-size: 24px;
+    }
+
+    .article-body {
+        font-size: 15px;
+    }
+
+    button {
+        padding-left: 14px;
+        padding-right: 14px;
     }
 }
+
 
 #password-screen {
     min-height: 100vh;
@@ -946,28 +889,17 @@ function showHome() {
                 思い出したいこと、<br> 
                 そして、日々のこと。 
             </p> 
-        </header> 
- 
-        <main class="blog-main"> 
-
-          <div class="home-article">
-    <button class="result-button" onclick="showArticle(0)">
-        <div class="article-date">2026.09.16 </div> 
-        <div class="article-title">日記：起床</div> 
-    </button>
+      
+<div class="search-area"> 
+    <div class="search-label">SEARCH</div> 
+    <div class="search-form"> 
+        <input type="text" id="searchBox" placeholder="キーワードを入力"> 
+        <button onclick="search()">検索</button> 
+    </div> 
 </div>
-
-            <div class="search-area"> 
-                <div class="search-label">SEARCH</div> 
-                <div class="search-form"> 
-                    <input type="text" id="searchBox" placeholder="キーワードを入力"> 
-                    <button onclick="search()">検索</button> 
-                </div> 
-            </div> 
- 
-        </main> 
-    `; 
- 
+</header>
+`;
+         
     document.getElementById("searchBox").addEventListener("keydown", function(event) { 
         if (event.key === "Enter") search(); 
     }); 
