@@ -431,7 +431,7 @@ const articles = [
     /* ===== 日記 No1 ===== */
 
     {
-        keywords: ["/diary/20260916"],
+        keywords: ["/diary/20260921"],
         title: "日記：起床",
         body: "今日は朝から雨がひどい//お父さんが駅まで送ってくれるらしい",
         type: "日記"
@@ -784,21 +784,21 @@ const articles = [
     {
         keywords: ["更新"],
         title: "更新履歴",
-        body: "9/16//8:12　記事作成//追記//23:03　修正//9/17//01:28　修正//9/18//02:41　「朝」の部分を更新",
+        body: "9/21//8:12　記事作成//追記//23:03　修正//9/22//01:28　修正//9/23//02:41　「朝」の部分を更新",
         type: "更新"
     },
 
     {
         keywords: ["9/18"],
         title: "更新内容",
-        body: "「diary/20260916-morning-old」から「/diary/20260916」",
+        body: "「diary/20260921-morning-old」から「/diary/20260921」",
         type: "更新"
     },
 
     /* ===== 日記 No20 ===== */
 
     {
-        keywords: ["diary/20260916-morning-old"],
+        keywords: ["diary/20260921-morning-old"],
         title: "日記：いつもの朝",
         body: "いつも通りの道で駅へ//駅からは悩ましいな",
         type: "日記"
@@ -912,7 +912,7 @@ function showHome() {
         <main class="blog-main">
             <div class="home-article">
                 <button class="result-button" onclick="showArticle(0)">
-                    <div class="article-date">2026.09.16</div>
+                    <div class="article-date">2026.09.21</div>
                     <div class="article-title">日記：起床</div>
                 </button>
             </div>
@@ -959,7 +959,7 @@ function showResults(word, matches) {
     const grayWords = [
         "更新",
         "9/18",
-        "diary/20260916-morning-old",
+        "diary/20260921-morning-old",
         "千葉大",
         "就職"
     ];
@@ -992,7 +992,7 @@ function showResults(word, matches) {
 
         matches.forEach(article => {
             const index = articles.indexOf(article);
-            const date = article.type === "日記" ? "2026.09.16" : "";
+            const date = article.type === "日記" ? "2026.09.21" : "";
 
             html += `
                 <button class="result-button" onclick="showArticle(${index})">
@@ -1019,15 +1019,15 @@ function showArticle(index) {
 
     const date =
         article.title === "日記：起床"
-            ? "2026.09.16更新"
+            ? "2026.09.21更新"
             : article.type === "日記"
-                ? "2026.09.16"
+                ? "2026.09.21"
                 : "";
 
     const grayWords = [
         "更新",
-        "9/18",
-        "diary/20260916-morning-old",
+        "9/21",
+        "diary/20260921-morning-old",
         "千葉大",
         "就職"
     ];
