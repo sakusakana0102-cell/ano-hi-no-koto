@@ -976,10 +976,19 @@ function showResults(word, matches) {
                 思い出したいこと、<br>
                 そして、日々のこと。
             </p>
+
+            <div class="search-area">
+                <div class="search-label">SEARCH</div>
+                <div class="search-form">
+                    <input type="text" id="searchBox" placeholder="キーワードを入力">
+                    <button onclick="search()">検索</button>
+                </div>
+            </div>
         </header>
 
         <main class="blog-main">
-            <div class="results-page">
+            <div class="results-page">            
+
                 <h2 class="results-heading">検索結果</h2>
     `;
 
@@ -1049,6 +1058,14 @@ function showArticle(index) {
                 思い出したいこと、<br>
                 そして、日々のこと。
             </p>
+
+            <div class="search-area">
+                <div class="search-label">SEARCH</div>
+                <div class="search-form">
+                    <input type="text" id="searchBox" placeholder="キーワードを入力">
+                    <button onclick="search()">検索</button>
+                </div>
+            </div>
         </header>
 
         <main class="blog-main">
@@ -1059,15 +1076,15 @@ function showArticle(index) {
                 <div class="article-body">
                     ${formatBody(article.body)}
                 </div>
-<div class="article-meta">${getArticleNumber(index)}</div>
+
+                <div class="article-meta">${getArticleNumber(index)}</div>
             </article>
 
             <a class="back-link" onclick="returnToSearch()">← 検索結果に戻る</a>
         </main>
-
-       
     `;
 }
+
 
 function returnToSearch() {
 
